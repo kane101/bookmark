@@ -1,0 +1,136 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the header of the site/application.
+// -----------------------------------------------------------------------------
+.header {
+	height: 10rem;
+	position: fixed;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	z-index: 10;
+	background-color: $white;
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__logo {
+		z-index: 10;
+	}
+	&__btn {
+		width: 25px;
+		height: 25px;
+		position: relative;
+		border: none;
+		cursor: pointer;
+		display: none;
+		z-index: 10;
+		span {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			height: 3px;
+			background-color: $black;
+			transition: top 0.3s cubic-bezier(0.04, 0.57, 0.57, 1.08),
+				transform 0.3s cubic-bezier(0.04, 0.57, 0.57, 1.08);
+		}
+		span:nth-of-type(1) {
+			top: 30%;
+		}
+		span:nth-of-type(2) {
+			top: 70%;
+		}
+	}
+}
+
+.nav {
+	> * + * {
+		margin-left: 4.8rem;
+	}
+	&__item {
+		display: inline-block;
+		font-size: 1.4rem;
+		text-transform: uppercase;
+		transition: 0.3s ease;
+		&:hover {
+			color: $softRed;
+		}
+	}
+}
+
+@include breakpoint(sm) {
+	.header {
+		&__btn {
+			display: block;
+		}
+		&__nav {
+			position: fixed;
+			opacity: 0;
+			visibility: hidden;
+			width: 100%;
+			top: -20%;
+			left: 0;
+			min-height: 100vh;
+		}
+	}
+
+	.header.active .header {
+		&__btn {
+			span {
+				top: 50%;
+				background-color: $white;
+			}
+			span:nth-of-type(1) {
+				transform: rotate(45deg);
+			}
+			span:nth-of-type(2) {
+				transform: rotate(-45deg);
+			}
+		}
+		&__nav {
+			top: 0;
+			opacity: 1;
+			visibility: visible;
+			background-color: $black;
+			transition: 0.3s ease;
+		}
+		&__logo path,
+		&__logo circle {
+			fill: $white;
+		}
+		&__logo #inside {
+			fill: $black;
+		}
+	}
+
+	.nav {
+		min-height: inherit;
+		padding-top: 15rem;
+		padding-left: 2rem;
+		padding-right: 2rem;
+		overflow: scroll;
+		z-index: 10;
+		> * + * {
+			margin-left: 0;
+		}
+		&__item {
+			display: block;
+			font-size: 2rem;
+			margin-bottom: 7rem;
+			text-align: center;
+			color: $white;
+		}
+		&__item .btn {
+			width: 100%;
+			max-width: 40rem;
+			margin: auto;
+			display: block;
+			background-color: transparent;
+			border-color: $white;
+			&:hover {
+				border-color: $softRed;
+				background-color: $softRed;
+				color: $white;
+			}
+		}
+	}
+}

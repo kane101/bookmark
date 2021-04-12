@@ -1,0 +1,42 @@
+$max-width-section: 540px;
+$grid-columns: 12;
+
+$xs: 480px;
+$sm: 768px;
+$md: 1024px;
+$lg: 1200px;
+$xl: 1400px;
+
+/// Container's maximum width
+/// @type Length
+
+$max-width: $lg !default;
+$max-width-narrow: $sm !default;
+$max-width-wide: $lg !default;
+
+$breakpoints: (
+	'xs': $xs,
+	'sm': $sm,
+	'md': $md,
+	'lg': $lg,
+	'xl': $xl,
+) !default;
+
+$grid-gap: 1.5rem;
+
+$softBlue: hsl(231, 69%, 60%);
+$softRed: hsl(0, 94%, 66%);
+$grayishBlue: hsl(229, 8%, 60%);
+$veryDarkBlue: hsl(229, 31%, 21%);
+$lightGrey: rgb(247, 247, 247);
+
+$black: #000;
+$white: #fff;
+$text-grey: hsl(229, 8%, 60%);
+$text-dark: hsl(229, 31%, 21%);
+
+@mixin breakpoint($breakpoint, $rule: max-width) {
+	@media screen and (#{$rule}: map-get($breakpoints, $breakpoint)) {
+		@content;
+	}
+}

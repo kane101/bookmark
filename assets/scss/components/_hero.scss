@@ -1,0 +1,87 @@
+.hero {
+	.container {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 10rem;
+	}
+	&__content {
+		min-width: 37.5rem;
+		padding-top: 7.5rem;
+		p {
+			margin-bottom: 3rem;
+		}
+	}
+	&__btns {
+		> * + * {
+			margin-left: 1rem;
+		}
+	}
+	&__img {
+		position: relative;
+		height: inherit;
+		img {
+			position: absolute;
+			z-index: 1;
+			min-width: 100%;
+			max-width: unset;
+			top: 0;
+		}
+		&::before {
+			content: '';
+			height: 35.2rem;
+			width: 100vw;
+			background-color: $softBlue;
+			border-radius: 20rem 0 0 20rem;
+			position: absolute;
+			left: 16rem;
+			top: 14rem;
+			z-index: -1;
+		}
+	}
+}
+
+@include breakpoint(sm) {
+	.hero {
+		margin: 10rem 0;
+		.container {
+			display: flex;
+			flex-direction: column-reverse;
+			align-items: center;
+			gap: 0;
+		}
+		&__content {
+			min-width: auto;
+			padding-bottom: 0rem;
+			max-width: 54rem;
+			p,
+			h1 {
+				text-align: center;
+			}
+		}
+		&__btns {
+			text-align: center;
+			> * + * {
+				margin-left: 0;
+			}
+			.btn {
+				margin-bottom: 1rem;
+				width: 100%;
+				max-width: 40rem;
+			}
+		}
+		&__img {
+			img {
+				position: relative;
+				max-width: 100%;
+				min-width: unset;
+			}
+			&::before {
+				content: '';
+				height: 80%;
+				top: unset;
+				left: 8rem;
+				bottom: 0;
+			}
+		}
+	}
+}

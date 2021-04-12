@@ -1,0 +1,46 @@
+.accordion {
+	margin-top: 5rem;
+	border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+	border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+	> * + * {
+		border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+	}
+	&__header {
+		padding: 2.5rem 2rem 2.5rem 0;
+		display: flex;
+		justify-content: space-between;
+		&:hover {
+			color: $softRed;
+			cursor: pointer;
+		}
+		i {
+			color: $softBlue;
+			transition: 0.3s ease-in-out;
+			pointer-events: none;
+		}
+		&.active {
+			i {
+				transform: rotate(180deg);
+				transition: 0.3s ease-in-out;
+				color: $softRed;
+			}
+		}
+	}
+}
+
+.collapse {
+	display: none;
+	&__body {
+		padding-bottom: 2.5rem;
+	}
+	&.show {
+		display: block;
+	}
+}
+
+.collapsing {
+	position: relative;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.3s ease-in-out;
+}
