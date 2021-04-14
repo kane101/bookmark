@@ -58,7 +58,7 @@
 		.contact__input {
 			&::after {
 				content: 'Whoops, make sure it’s an email';
-				top: calc(100% - 0.3rem);
+				top: calc(100% - 0.4rem);
 			}
 		}
 		input {
