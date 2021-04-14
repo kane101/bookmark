@@ -29,13 +29,12 @@ const speed = 300;
 
 function closeAccordionItem(collapse) {
 	collapse.style.maxHeight = collapse.scrollHeight + 'px';
+	collapse.classList = 'collapsing';
 	setTimeout(() => {
-		collapse.classList = 'collapsing';
-		collapse.style.maxHeight = '0px';
-	}, 10);
+		collapse.style.maxHeight = '';
+	}, 0);
 	setTimeout(() => {
 		collapse.classList = 'collapse';
-		collapse.style.maxHeight = '';
 	}, speed);
 }
 
@@ -59,4 +58,27 @@ accordion.map((item) => {
 		}
 		activeItem.classList.toggle('active');
 	});
+});
+
+const form = document.querySelector('form');
+let formValue = document.querySelector('.contact__input').value;
+
+function isEmail(email) {
+	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+		email
+	);
+}
+
+const showError = () => {
+	setTimeout(() => {
+		form.classList.remove('error');
+	}, 4500);
+	form.classList.add('error');
+};
+
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+	if (!isEmail(formValue)) {
+		showError();
+	}
 });

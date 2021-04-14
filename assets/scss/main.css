@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
 /* Box sizing rules */
 *,
@@ -80,13 +81,15 @@ a {
 
 .btn {
   display: inline-block;
-  padding: 1rem 2.5rem;
+  padding: 1.2rem 2.3rem;
   border-radius: 0.5rem;
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
   -webkit-box-shadow: 0 0.3rem 0.6rem 0rem rgba(73, 93, 22, 0.2);
           box-shadow: 0 0.3rem 0.6rem 0rem rgba(73, 93, 22, 0.2);
   font-size: 1.4rem;
+  outline: none;
+  cursor: pointer;
 }
 
 .btn--red {
@@ -755,6 +758,7 @@ p {
 
 .accordion {
   margin-top: 5rem;
+  margin-bottom: 5rem;
   border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
   border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
 }
@@ -771,6 +775,9 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .accordion__header:hover {
@@ -793,16 +800,15 @@ p {
   color: #fa5757;
 }
 
-.collapse {
+.collapse:not(.show) {
   display: none;
 }
 
 .collapse__body {
   padding-bottom: 2.5rem;
-}
-
-.collapse.show {
-  display: block;
+  color: #9194a1;
+  line-height: 1.6;
+  font-size: 1.6rem;
 }
 
 .collapsing {
@@ -811,5 +817,155 @@ p {
   overflow: hidden;
   -webkit-transition: max-height 0.3s ease-in-out;
   transition: max-height 0.3s ease-in-out;
+}
+
+.contact {
+  background-color: #5368df;
+}
+
+.contact small {
+  color: #fff;
+  letter-spacing: 0.2rem;
+  font-size: 1.4rem;
+  text-align: center;
+  display: block;
+  margin-bottom: 4rem;
+}
+
+.contact h4 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 5rem;
+}
+
+.contact form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact form .contact__input {
+  margin-right: 1.5rem;
+  position: relative;
+  z-index: 0;
+}
+
+.contact form .contact__input::after {
+  content: 'Whoops, make sure it’s an email';
+  background-color: #fa5757;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  top: 0;
+  font-size: 1.2rem;
+  color: #fff;
+  border-radius: 0 0 0.5rem 0.5rem;
+  z-index: -1;
+  -webkit-transition: top 0.3s ease;
+  transition: top 0.3s ease;
+}
+
+.contact form input {
+  width: 30rem;
+  border-radius: 0.5rem;
+  height: 100%;
+  border: none;
+  text-indent: 2rem;
+  padding-right: 4rem;
+  outline: none;
+  overflow-y: hidden;
+  border: 0.2rem solid transparent;
+  background: url(../images/icon-error.svg) center right -4rem/20px 20px no-repeat, #fff;
+  -webkit-transition: background-position 0.3s ease;
+  transition: background-position 0.3s ease;
+  position: relative;
+  font-size: 1.5rem;
+}
+
+.contact form input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.contact form input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.contact form input::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.contact form input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.contact form.error .contact__input::after {
+  content: 'Whoops, make sure it’s an email';
+  top: calc(100% - 0.3rem);
+}
+
+.contact form.error input {
+  border: 0.2rem solid #fa5757;
+  background: url(../images/icon-error.svg) center right 1rem/20px 20px no-repeat, #fff;
+}
+
+.contact form.error input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.contact form.error input:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.contact form.error input::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.contact form.error input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .contact form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact form .contact__input {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  .contact form .contact__input::after {
+    content: 'Whoops, make sure it’s an email';
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-top: -3.4rem;
+    -webkit-transition: margin-top 0.3s ease;
+    transition: margin-top 0.3s ease;
+  }
+  .contact form input {
+    width: 100%;
+    height: 4.4rem;
+  }
+  .contact form.error {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact form.error .contact__input::after {
+    content: 'Whoops, make sure it’s an email';
+    margin-top: -0.3rem;
+  }
+  .contact form.error input {
+    width: 100%;
+    height: 4.4rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,108 @@
+.contact {
+	background-color: $softBlue;
+	small {
+		color: $white;
+		letter-spacing: 0.2rem;
+		font-size: 1.4rem;
+		text-align: center;
+		display: block;
+		margin-bottom: 4rem;
+	}
+	h4 {
+		text-align: center;
+		color: $white;
+		margin-bottom: 5rem;
+	}
+	form {
+		display: flex;
+		justify-content: center;
+		.contact__input {
+			margin-right: 1.5rem;
+			position: relative;
+			z-index: 0;
+			&::after {
+				content: 'Whoops, make sure it’s an email';
+				background-color: $softRed;
+				position: absolute;
+				left: 0;
+				width: 100%;
+				padding: 1rem;
+				top: 0;
+				font-size: 1.2rem;
+				color: $white;
+				border-radius: 0 0 0.5rem 0.5rem;
+				z-index: -1;
+				transition: top 0.3s ease;
+			}
+		}
+		input {
+			width: 30rem;
+			border-radius: 0.5rem;
+			height: 100%;
+			border: none;
+			text-indent: 2rem;
+			padding-right: 4rem;
+			outline: none;
+			overflow-y: hidden;
+			border: 0.2rem solid transparent;
+			background: url(../images/icon-error.svg) center right -4rem/20px 20px no-repeat, $white;
+			transition: background-position 0.3s ease;
+			position: relative;
+			font-size: 1.5rem;
+		}
+		input::placeholder {
+			color: rgba(0, 0, 0, 0.2);
+		}
+	}
+	form.error {
+		.contact__input {
+			&::after {
+				content: 'Whoops, make sure it’s an email';
+				top: calc(100% - 0.3rem);
+			}
+		}
+		input {
+			border: 0.2rem solid $softRed;
+			background: url(../images/icon-error.svg) center right 1rem/20px 20px no-repeat, $white;
+		}
+		input::placeholder {
+			color: rgba(0, 0, 0, 0.2);
+		}
+	}
+}
+
+@include breakpoint(sm) {
+	.contact form {
+		flex-direction: column;
+		.contact__input {
+			margin-right: 0;
+			margin-bottom: 1rem;
+			overflow: hidden;
+			&::after {
+				content: 'Whoops, make sure it’s an email';
+				position: relative;
+				display: block;
+				width: 100%;
+				margin-top: -3.4rem;
+				transition: margin-top 0.3s ease;
+			}
+		}
+		input {
+			width: 100%;
+			height: 4.4rem;
+		}
+	}
+	.contact form.error {
+		flex-direction: column;
+		.contact__input {
+			&::after {
+				content: 'Whoops, make sure it’s an email';
+				margin-top: -0.3rem;
+			}
+		}
+		input {
+			width: 100%;
+			height: 4.4rem;
+		}
+	}
+}
