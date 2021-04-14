@@ -28,13 +28,12 @@
 				left: 0;
 				width: 100%;
 				padding: 1rem;
-				top: 50%;
+				top: 0;
 				font-size: 1.2rem;
 				color: $white;
 				border-radius: 0 0 0.5rem 0.5rem;
 				z-index: -1;
 				transition: top 0.3s ease;
-				transform: translateY(-50%);
 			}
 		}
 		input {
@@ -62,7 +61,6 @@
 			&::after {
 				content: 'Whoops, make sure it’s an email';
 				top: calc(100% - 0.4rem);
-				transform: unset;
 			}
 		}
 		input {
@@ -87,9 +85,8 @@
 				position: relative;
 				display: block;
 				width: 100%;
-				margin-top: -4rem;
+				margin-top: -3.5rem;
 				transition: margin-top 0.3s ease;
-				transform: translateY(-50%);
 			}
 		}
 		input {
@@ -104,7 +101,6 @@
 			&::after {
 				content: 'Whoops, make sure it’s an email';
 				margin-top: -0.4rem;
-				transform: unset;
 			}
 		}
 		input {

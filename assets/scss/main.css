@@ -969,6 +969,7 @@ p {
   margin-right: 1.5rem;
   position: relative;
   z-index: 0;
+  overflow: hidden;
 }
 
 .contact form .contact__input::after {
@@ -1020,9 +1021,13 @@ p {
   color: rgba(0, 0, 0, 0.2);
 }
 
+.contact form.error .contact__input {
+  overflow: visible;
+}
+
 .contact form.error .contact__input::after {
   content: 'Whoops, make sure it’s an email';
-  top: calc(100% - 0.3rem);
+  top: calc(100% - 0.4rem);
 }
 
 .contact form.error input {
@@ -1063,7 +1068,7 @@ p {
     position: relative;
     display: block;
     width: 100%;
-    margin-top: -3.4rem;
+    margin-top: -3.5rem;
     -webkit-transition: margin-top 0.3s ease;
     transition: margin-top 0.3s ease;
   }
@@ -1076,6 +1081,7 @@ p {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    overflow: visible;
   }
   .contact form.error .contact__input::after {
     content: 'Whoops, make sure it’s an email';
