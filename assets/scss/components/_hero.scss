@@ -43,6 +43,10 @@
 @include breakpoint(sm) {
 	.hero {
 		margin: 10rem 0;
+		&.padding {
+			padding-top: 0;
+			margin: 5rem 0;
+		}
 		.container {
 			display: flex;
 			flex-direction: column-reverse;

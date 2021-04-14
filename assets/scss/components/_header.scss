@@ -9,9 +9,15 @@
 	align-items: center;
 	z-index: 10;
 	background-color: $white;
+	transition: height 0.3s ease;
+	&:not(.active).scroll {
+		box-shadow: 0 0.1rem 0.9rem 0rem rgba(0, 0, 0, 0.6);
+		height: 7rem;
+	}
 	.container {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 	}
 	&__logo {
 		z-index: 10;
@@ -67,12 +73,11 @@
 			opacity: 0;
 			visibility: hidden;
 			width: 100%;
-			top: -20%;
 			left: 0;
+			bottom: 0;
 			min-height: 100vh;
 		}
 	}
-
 	.header.active .header {
 		&__btn {
 			span {
@@ -92,6 +97,7 @@
 			visibility: visible;
 			background-color: $black;
 			transition: 0.3s ease;
+			overflow-x: hidden;
 		}
 		&__logo path,
 		&__logo circle {
@@ -114,8 +120,8 @@
 		}
 		&__item {
 			display: block;
-			font-size: 2rem;
-			margin-bottom: 7rem;
+			font-size: 1.5rem;
+			margin-bottom: 4rem;
 			text-align: center;
 			color: $white;
 		}

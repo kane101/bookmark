@@ -82,3 +82,9 @@ form.addEventListener('submit', (e) => {
 		showError();
 	}
 });
+window.addEventListener('scroll', () => {
+	if (window.scrollY > document.querySelector('.header').style.height) {
+		return document.querySelector('.header').classList.add('scroll');
+	}
+	document.querySelector('.header').classList.remove('scroll');
+});
