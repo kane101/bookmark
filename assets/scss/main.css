@@ -217,7 +217,7 @@ p {
   width: 100%;
   left: 0;
   height: 3px;
-  background-color: #000;
+  background-color: #252b46;
   -webkit-transition: top 0.3s cubic-bezier(0.04, 0.57, 0.57, 1.08), -webkit-transform 0.3s cubic-bezier(0.04, 0.57, 0.57, 1.08);
   transition: top 0.3s cubic-bezier(0.04, 0.57, 0.57, 1.08), -webkit-transform 0.3s cubic-bezier(0.04, 0.57, 0.57, 1.08);
   transition: top 0.3s cubic-bezier(0.04, 0.57, 0.57, 1.08), transform 0.3s cubic-bezier(0.04, 0.57, 0.57, 1.08);
@@ -277,7 +277,7 @@ p {
     top: 0;
     opacity: 1;
     visibility: visible;
-    background-color: #000;
+    background-color: #252b46;
     -webkit-transition: 0.3s ease;
     transition: 0.3s ease;
     overflow-x: hidden;

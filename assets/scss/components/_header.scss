@@ -35,7 +35,7 @@
 			width: 100%;
 			left: 0;
 			height: 3px;
-			background-color: $black;
+			background-color: $veryDarkBlue;
 			transition: top 0.3s cubic-bezier(0.04, 0.57, 0.57, 1.08),
 				transform 0.3s cubic-bezier(0.04, 0.57, 0.57, 1.08);
 		}
@@ -95,7 +95,7 @@
 			top: 0;
 			opacity: 1;
 			visibility: visible;
-			background-color: $black;
+			background-color: $veryDarkBlue;
 			transition: 0.3s ease;
 			overflow-x: hidden;
 		}
