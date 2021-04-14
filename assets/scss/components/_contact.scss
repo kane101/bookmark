@@ -94,6 +94,7 @@
 	}
 	.contact form.error {
 		flex-direction: column;
+		overflow: visible;
 		.contact__input {
 			&::after {
 				content: 'Whoops, make sure it’s an email';
