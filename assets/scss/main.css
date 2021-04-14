@@ -1079,7 +1079,7 @@ p {
   }
   .contact form.error .contact__input::after {
     content: 'Whoops, make sure it’s an email';
-    margin-top: -0.3rem;
+    margin-top: -0.4rem;
   }
   .contact form.error input {
     width: 100%;
