@@ -67,25 +67,38 @@ accordion.map((item) => {
 	});
 });
 
-const form = document.querySelector('form');
-let formValue = document.querySelector('.contact__input').value;
+const form = document.querySelector('form.form');
+form.addEventListener('submit', (e) => {
+	checkInput(e);
+});
 
+function checkInput(e) {
+	const nameInput = document.querySelector('input[name="name"]');
+	const emailInput = document.querySelector('input[name="email"]');
+	const nameValue = document.querySelector('input[name="name"]').value;
+	const emailValue = document.querySelector('input[name="email"]').value;
+
+	if (nameValue === '') {
+		e.preventDefault();
+		setErrorFor(nameInput, 'Name Field can not be blank!');
+	}
+
+	if (!isEmail(emailValue)) {
+		e.preventDefault();
+		setErrorFor(emailInput, 'Whoops, make sure it’s an email');
+	}
+}
+
+function setErrorFor(input, message) {
+	setTimeout(() => {
+		input.parentElement.classList.remove('error');
+		input.nextElementSibling.innerText = '';
+	}, 4500);
+	input.parentNode.classList.add('error');
+	input.nextElementSibling.innerText = message;
+}
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
 		email
 	);
 }
-
-form.addEventListener('submit', (e) => {
-	e.preventDefault();
-	if (!isEmail(formValue)) {
-		showError();
-	}
-});
-
-const showError = () => {
-	setTimeout(() => {
-		form.classList.remove('error');
-	}, 4500);
-	form.classList.add('error');
-};

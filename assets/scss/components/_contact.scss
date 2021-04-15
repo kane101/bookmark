@@ -13,109 +13,71 @@
 		color: $white;
 		margin-bottom: 5rem;
 	}
-	form {
+	.form {
 		display: flex;
 		justify-content: center;
-		.contact__input {
-			margin-right: 1.5rem;
+		flex-direction: column;
+		.hidden {
+			visibility: hidden;
+			height: 0;
+			overflow: hidden;
+		}
+		&__control {
 			position: relative;
 			z-index: 0;
 			overflow: hidden;
-			&::after {
-				content: 'Whoops, make sure it’s an email';
-				background-color: $softRed;
-				position: absolute;
-				left: 0;
+			margin-bottom: 1rem;
+			input {
+				width: 30rem;
+				border-radius: 0.5rem;
+				height: 4.4rem;
 				width: 100%;
-				padding: 1rem;
-				top: 0;
+				border: none;
+				text-indent: 2rem;
+				padding-right: 4rem;
+				outline: none;
+				overflow-y: hidden;
+				border: 0.2rem solid transparent;
+				background: url(../images/icon-error.svg) center right -4rem/20px 20px no-repeat,
+					$white;
+				transition: background-position 0.3s ease;
+				position: relative;
+				font-size: 1.5rem;
+				&::placeholder {
+					color: rgba(0, 0, 0, 0.2);
+				}
+			}
+			span {
+				background-color: $softRed;
+				position: relative;
+				top: -0.3rem;
+				padding-top: 0.3rem;
+				width: 100%;
+				height: 0;
 				opacity: 0;
+				display: flex;
+				align-items: center;
 				visibility: hidden;
 				font-size: 1.2rem;
 				color: $white;
 				border-radius: 0 0 0.5rem 0.5rem;
 				z-index: -1;
-				transition: top 0.3s ease;
+				padding: 0 2rem;
+				transition: all 0.3s ease;
 			}
 		}
-		input {
-			width: 30rem;
-			border-radius: 0.5rem;
-			height: 100%;
-			border: none;
-			text-indent: 2rem;
-			padding-right: 4rem;
-			outline: none;
-			overflow-y: hidden;
-			border: 0.2rem solid transparent;
-			background: url(../images/icon-error.svg) center right -4rem/20px 20px no-repeat, $white;
-			transition: background-position 0.3s ease;
-			position: relative;
-			font-size: 1.5rem;
-		}
-		input::placeholder {
-			color: rgba(0, 0, 0, 0.2);
-		}
-	}
-	form.error {
-		.contact__input {
+		&__control.error {
 			overflow: visible;
-
-			&::after {
-				content: 'Whoops, make sure it’s an email';
-				top: calc(100% - 0.4rem);
+			span {
 				visibility: visible;
 				opacity: 1;
+				height: 3rem;
 			}
-		}
-		input {
-			border: 0.2rem solid $softRed;
-			background: url(../images/icon-error.svg) center right 1rem/20px 20px no-repeat, $white;
-		}
-		input::placeholder {
-			color: rgba(0, 0, 0, 0.2);
-		}
-	}
-}
-
-@include breakpoint(sm) {
-	.contact form {
-		flex-direction: column;
-		.contact__input {
-			margin-right: 0;
-			margin-bottom: 1rem;
-			overflow: hidden;
-			&::after {
-				content: 'Whoops, make sure it’s an email';
-				position: relative;
-				display: block;
-				width: 100%;
-				margin-top: -3.5rem;
-				opacity: 0;
-				visibility: hidden;
-				transition: margin-top 0.3s ease;
+			input {
+				border: 0.2rem solid $softRed;
+				background: url(../images/icon-error.svg) center right 1rem/20px 20px no-repeat,
+					$white;
 			}
-		}
-		input {
-			width: 100%;
-			height: 4.4rem;
-		}
-	}
-	.contact form.error {
-		flex-direction: column;
-		overflow: visible;
-
-		.contact__input {
-			&::after {
-				content: 'Whoops, make sure it’s an email';
-				margin-top: -0.4rem;
-				opacity: 1;
-				visibility: visible;
-			}
-		}
-		input {
-			width: 100%;
-			height: 4.4rem;
 		}
 	}
 }
