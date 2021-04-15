@@ -55,9 +55,9 @@ function openAccordionItem(collapse) {
 }
 
 accordion.map((item) => {
-	item.addEventListener('click', (e) => {
-		const activeItem = e.currentTarget;
-		const activeBody = e.currentTarget.nextElementSibling;
+	item.addEventListener('click', () => {
+		const activeItem = item;
+		const activeBody = item.nextElementSibling;
 		if (activeItem.classList.contains('active')) {
 			closeAccordionItem(activeBody);
 		} else {
