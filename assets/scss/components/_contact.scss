@@ -60,11 +60,12 @@
 	form.error {
 		.contact__input {
 			overflow: visible;
-			visibility: visible;
-			opacity: 1;
+
 			&::after {
 				content: 'Whoops, make sure it’s an email';
 				top: calc(100% - 0.4rem);
+				visibility: visible;
+				opacity: 1;
 			}
 		}
 		input {
@@ -103,12 +104,13 @@
 	.contact form.error {
 		flex-direction: column;
 		overflow: visible;
-		opacity: 1;
-		visibility: visible;
+
 		.contact__input {
 			&::after {
 				content: 'Whoops, make sure it’s an email';
 				margin-top: -0.4rem;
+				opacity: 1;
+				visibility: visible;
 			}
 		}
 		input {

@@ -1025,13 +1025,13 @@ p {
 
 .contact form.error .contact__input {
   overflow: visible;
-  visibility: visible;
-  opacity: 1;
 }
 
 .contact form.error .contact__input::after {
   content: 'Whoops, make sure it’s an email';
   top: calc(100% - 0.4rem);
+  visibility: visible;
+  opacity: 1;
 }
 
 .contact form.error input {
@@ -1088,12 +1088,12 @@ p {
         -ms-flex-direction: column;
             flex-direction: column;
     overflow: visible;
-    opacity: 1;
-    visibility: visible;
   }
   .contact form.error .contact__input::after {
     content: 'Whoops, make sure it’s an email';
     margin-top: -0.4rem;
+    opacity: 1;
+    visibility: visible;
   }
   .contact form.error input {
     width: 100%;
