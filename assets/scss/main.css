@@ -980,6 +980,8 @@ p {
   width: 100%;
   padding: 1rem;
   top: 0;
+  opacity: 0;
+  visibility: hidden;
   font-size: 1.2rem;
   color: #fff;
   border-radius: 0 0 0.5rem 0.5rem;
@@ -1023,6 +1025,8 @@ p {
 
 .contact form.error .contact__input {
   overflow: visible;
+  visibility: visible;
+  opacity: 1;
 }
 
 .contact form.error .contact__input::after {
@@ -1069,6 +1073,8 @@ p {
     display: block;
     width: 100%;
     margin-top: -3.5rem;
+    opacity: 0;
+    visibility: hidden;
     -webkit-transition: margin-top 0.3s ease;
     transition: margin-top 0.3s ease;
   }
@@ -1082,6 +1088,8 @@ p {
         -ms-flex-direction: column;
             flex-direction: column;
     overflow: visible;
+    opacity: 1;
+    visibility: visible;
   }
   .contact form.error .contact__input::after {
     content: 'Whoops, make sure it’s an email';

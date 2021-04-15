@@ -29,6 +29,8 @@
 				width: 100%;
 				padding: 1rem;
 				top: 0;
+				opacity: 0;
+				visibility: hidden;
 				font-size: 1.2rem;
 				color: $white;
 				border-radius: 0 0 0.5rem 0.5rem;
@@ -58,6 +60,8 @@
 	form.error {
 		.contact__input {
 			overflow: visible;
+			visibility: visible;
+			opacity: 1;
 			&::after {
 				content: 'Whoops, make sure it’s an email';
 				top: calc(100% - 0.4rem);
@@ -86,6 +90,8 @@
 				display: block;
 				width: 100%;
 				margin-top: -3.5rem;
+				opacity: 0;
+				visibility: hidden;
 				transition: margin-top 0.3s ease;
 			}
 		}
@@ -97,6 +103,8 @@
 	.contact form.error {
 		flex-direction: column;
 		overflow: visible;
+		opacity: 1;
+		visibility: visible;
 		.contact__input {
 			&::after {
 				content: 'Whoops, make sure it’s an email';
