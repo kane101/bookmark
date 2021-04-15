@@ -257,6 +257,7 @@ p {
     opacity: 0;
     visibility: hidden;
     width: 100%;
+    top: -20%;
     left: 0;
     bottom: 0;
     min-height: 100vh;

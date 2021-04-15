@@ -5,6 +5,13 @@ toggle.addEventListener('click', () => {
 	header.classList.toggle('active');
 });
 
+window.addEventListener('scroll', () => {
+	if (window.scrollY > header.style.height) {
+		return header.classList.add('scroll');
+	}
+	header.classList.remove('scroll');
+});
+
 const tabBtns = [...document.querySelectorAll('.tabBtn')];
 const tabslides = [...document.querySelectorAll('.slide')];
 
@@ -69,22 +76,16 @@ function isEmail(email) {
 	);
 }
 
-const showError = () => {
-	setTimeout(() => {
-		form.classList.remove('error');
-	}, 4500);
-	form.classList.add('error');
-};
-
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
 	if (!isEmail(formValue)) {
 		showError();
 	}
 });
-window.addEventListener('scroll', () => {
-	if (window.scrollY > document.querySelector('.header').style.height) {
-		return document.querySelector('.header').classList.add('scroll');
-	}
-	document.querySelector('.header').classList.remove('scroll');
-});
+
+const showError = () => {
+	setTimeout(() => {
+		form.classList.remove('error');
+	}, 4500);
+	form.classList.add('error');
+};

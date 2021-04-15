@@ -73,9 +73,11 @@
 			opacity: 0;
 			visibility: hidden;
 			width: 100%;
+			top: -20%;
 			left: 0;
 			bottom: 0;
 			min-height: 100vh;
+			transition: 0.3s ease;
 		}
 	}
 	.header.active .header {
@@ -96,7 +98,6 @@
 			opacity: 1;
 			visibility: visible;
 			background-color: $veryDarkBlue;
-			transition: 0.3s ease;
 			overflow-x: hidden;
 		}
 		&__logo path,
