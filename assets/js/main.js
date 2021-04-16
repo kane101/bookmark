@@ -107,6 +107,7 @@ function checkInput() {
     }
 
     if (failed) return false;
+    if (!failed) return true;
 }
 
 function setErrorFor(input, message) {
