@@ -68,6 +68,8 @@ accordion.map((item) => {
 });
 
 let myForm = document.querySelector('form.form');
+const response = document.querySelector('.response-overlay');
+const responseText = document.querySelector('.response__text');
 
 const handleSubmit = async (e) => {
     e.preventDefault();
@@ -78,10 +80,16 @@ const handleSubmit = async (e) => {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData).toString(),
     })
-    .then(() => console.log('Form successfully submitted'))
-    .then(() => myForm.reset())
-    .catch();
-}
+        .then(() => myForm.reset())
+        .then(() => {
+            response.classList.add('show');
+            responseText.innerText = 'Thank you for your submission';
+        })
+        .catch(() => {
+            response.classList.add('show error');
+            responseText.innerText = 'Something went wrong';
+        });
+};
 
 myForm.addEventListener('submit', handleSubmit);
 
