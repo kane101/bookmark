@@ -88,7 +88,7 @@ function checkInput() {
     const emailInput = document.querySelector('input[name="email"]');
     const nameValue = document.querySelector('input[name="name"]').value;
     const emailValue = document.querySelector('input[name="email"]').value;
-    let failed;
+    let failed = false;
 
     if (nameValue === '') {
         setErrorFor(nameInput, 'Name Field can not be blank!');
