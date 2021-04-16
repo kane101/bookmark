@@ -68,17 +68,18 @@ accordion.map((item) => {
 });
 
 let myForm = document.querySelector('form.form');
-myForm.addEventListener('submit', (e) => {
+let formData = new FormData(myForm);
+
+myForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    checkInput();
-    let formData = new FormData(myForm);
-    fetch('/', {
+
+    await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData).toString(),
     })
         .then(() => console.log('Form successfully submitted'))
-        .catch((error) => alert(error));
+        .catch(checkInput());
 });
 
 function checkInput(e) {
