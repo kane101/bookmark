@@ -552,6 +552,10 @@ p {
   padding: 3rem;
 }
 
+.footer .response__text {
+  color: #5368df;
+}
+
 .footer .close {
   padding: 2rem 2rem;
   text-align: right;
@@ -1265,6 +1269,10 @@ p {
           align-items: center;
   text-align: center;
   padding: 3rem;
+}
+
+.footer .response__text {
+  color: #5368df;
 }
 
 .footer .close {

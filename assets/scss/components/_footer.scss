@@ -80,6 +80,9 @@
         align-items: center;
         text-align: center;
         padding: 3rem;
+        &__text {
+            color: $softBlue;
+        }
     }
     .close {
         padding: 2rem 2rem;
