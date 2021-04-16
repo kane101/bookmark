@@ -72,14 +72,14 @@ let formData = new FormData(myForm);
 
 myForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-
+    checkInput();
     await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams(formData).toString(),
     })
         .then(() => console.log('Form successfully submitted'))
-        .catch(checkInput());
+        .catch();
 });
 
 function checkInput(e) {
@@ -100,6 +100,7 @@ function checkInput(e) {
     if (!isEmail(emailValue)) {
         setErrorFor(emailInput, 'Whoops, make sure it’s an email');
     }
+    return;
 }
 
 function setErrorFor(input, message) {
