@@ -91,7 +91,10 @@ const handleSubmit = async (e) => {
         });
     document
         .querySelector('.fa-times')
-        .addEventListener('click', () => response.classList.remove('show'));
+        .addEventListener(
+            'click',
+            () => (response.classList = 'response-overlay')
+        );
 };
 
 myForm.addEventListener('submit', handleSubmit);

@@ -519,6 +519,10 @@ p {
   visibility: visible;
 }
 
+.footer .response-overlay.error .response__text {
+  color: #fa5757;
+}
+
 .footer .response-wrapper {
   background: #fff;
   width: 45rem;
@@ -1228,6 +1232,10 @@ p {
 .footer .response-overlay.show {
   opacity: 1;
   visibility: visible;
+}
+
+.footer .response-overlay.error .response__text {
+  color: #fa5757;
 }
 
 .footer .response-wrapper {
