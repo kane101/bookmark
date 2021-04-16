@@ -89,6 +89,9 @@ const handleSubmit = async (e) => {
             response.classList.add('show error');
             responseText.innerText = 'Something went wrong';
         });
+    document
+        .querySelector('.fa-times')
+        .addEventListener('click', () => response.classList.remove('show'));
 };
 
 myForm.addEventListener('submit', handleSubmit);
