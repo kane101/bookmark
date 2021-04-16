@@ -79,6 +79,7 @@ const handleSubmit = async (e) => {
         body: new URLSearchParams(formData).toString(),
     })
     .then(() => console.log('Form successfully submitted'))
+    .then(() => myForm.reset())
     .catch();
 }
 
