@@ -103,7 +103,7 @@ function checkInput() {
         failedValidation = true;
     }
 
-    if (!failedValidation) return true;
+    return !failedValidation ? true : false;
 }
 
 function setErrorFor(input, message) {
