@@ -72,7 +72,7 @@ let formData = new FormData(myForm);
 
 myForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    checkInput();
+    if (!checkInput()) return;
     await fetch('/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -87,20 +87,25 @@ function checkInput(e) {
     const emailInput = document.querySelector('input[name="email"]');
     const nameValue = document.querySelector('input[name="name"]').value;
     const emailValue = document.querySelector('input[name="email"]').value;
+    let failed;
 
     if (nameValue === '') {
         setErrorFor(nameInput, 'Name Field can not be blank!');
+        failed = true;
     }
 
     if (emailValue === '') {
         setErrorFor(emailInput, 'Email Field can not be blank!');
+        failed = true;
         return;
     }
 
     if (!isEmail(emailValue)) {
         setErrorFor(emailInput, 'Whoops, make sure it’s an email');
+        failed = true;
     }
-    return;
+
+    if (failed) return false;
 }
 
 function setErrorFor(input, message) {
