@@ -88,25 +88,21 @@ function checkInput() {
     const emailInput = document.querySelector('input[name="email"]');
     const nameValue = document.querySelector('input[name="name"]').value;
     const emailValue = document.querySelector('input[name="email"]').value;
-    let failed = false;
+    let failedValidation = false;
 
     if (nameValue === '') {
         setErrorFor(nameInput, 'Name Field can not be blank!');
-        failed = true;
+        failedValidation = true;
     }
 
     if (emailValue === '') {
         setErrorFor(emailInput, 'Email Field can not be blank!');
-        failed = true;
-        return false;
-    }
-
-    if (!isEmail(emailValue)) {
+        failedValidation = true;
+    } else if (!isEmail(emailValue)) {
         setErrorFor(emailInput, 'Whoops, make sure it’s an email');
-        failed = true;
+        failedValidation = true;
     }
 
-    if (failed) return false;
     if (!failed) return true;
 }
 
