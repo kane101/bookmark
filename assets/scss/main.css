@@ -525,10 +525,10 @@ p {
 
 .footer .response-wrapper {
   background: #fff;
-  width: 45rem;
+  width: 37rem;
   max-width: 100%;
   border-radius: 0.5rem;
-  min-height: 40rem;
+  min-height: 35rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -554,6 +554,7 @@ p {
 
 .footer .response__text {
   color: #5368df;
+  font-size: 3.5rem;
 }
 
 .footer .close {
@@ -1244,10 +1245,10 @@ p {
 
 .footer .response-wrapper {
   background: #fff;
-  width: 45rem;
+  width: 37rem;
   max-width: 100%;
   border-radius: 0.5rem;
-  min-height: 40rem;
+  min-height: 35rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1273,6 +1274,7 @@ p {
 
 .footer .response__text {
   color: #5368df;
+  font-size: 3.5rem;
 }
 
 .footer .close {
