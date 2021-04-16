@@ -69,10 +69,6 @@ accordion.map((item) => {
 
 let myForm = document.querySelector('form.form');
 let formData = new FormData(myForm);
-const nameInput = document.querySelector('input[name="name"]');
-const emailInput = document.querySelector('input[name="email"]');
-const nameValue = document.querySelector('input[name="name"]').value;
-const emailValue = document.querySelector('input[name="email"]').value;
 
 myForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -90,6 +86,10 @@ myForm.addEventListener('submit', async (e) => {
 });
 
 function checkInput() {
+    const nameInput = document.querySelector('input[name="name"]');
+    const emailInput = document.querySelector('input[name="email"]');
+    const nameValue = document.querySelector('input[name="name"]').value;
+    const emailValue = document.querySelector('input[name="email"]').value;
     let failedValidation = false;
 
     if (nameValue === '') {
