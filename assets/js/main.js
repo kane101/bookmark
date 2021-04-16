@@ -68,10 +68,11 @@ accordion.map((item) => {
 });
 
 let myForm = document.querySelector('form.form');
-let formData = new FormData(myForm);
+myForm.addEventListener('submit', handleSubmit);
 
-myForm.addEventListener('submit', async (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
+    let formData = new FormData(myForm);
     if (!checkInput()) return;
     await fetch('/', {
         method: 'POST',
@@ -79,11 +80,8 @@ myForm.addEventListener('submit', async (e) => {
         body: new URLSearchParams(formData).toString(),
     })
         .then(() => console.log('Form successfully submitted'))
-        .then(() => {
-            myForm.reset();
-        })
         .catch();
-});
+}
 
 function checkInput() {
     const nameInput = document.querySelector('input[name="name"]');
